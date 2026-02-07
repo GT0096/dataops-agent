@@ -1,0 +1,32 @@
+# =============================================================================
+# Terraform Variables - Example Configuration
+# =============================================================================
+# Copy this file to terraform.tfvars and fill in your values
+# =============================================================================
+
+# Resource naming (make these unique for your subscription)
+resource_group_name   = "rg-mcp-demo"
+key_vault_name        = "kv-mcp-demo-unique"  # Must be globally unique
+data_factory_name     = "adf-mcp-demo"
+storage_account_name  = "stmcpdemounique"     # Must be globally unique, lowercase, no hyphens
+
+# Azure region
+location = "eastus"
+
+# Environment
+environment = "dev"
+
+# Project name prefix
+project_name = "mcpdataops"
+
+# Optional: Your Azure AD Object ID for Key Vault admin access
+# Get this by running: az ad signed-in-user show --query id -o tsv
+admin_object_id = ""
+
+# Tags
+tags = {
+  Project     = "MCP-DataOps"
+  Environment = "dev"
+  ManagedBy   = "Terraform"
+  Owner       = "your-name"
+}
